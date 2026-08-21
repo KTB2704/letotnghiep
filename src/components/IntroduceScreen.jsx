@@ -7,11 +7,11 @@ import bgIntro from '../assets/bg_intro.jpg';
  */
 export default function IntroduceScreen({ onNext, onBack }) {
   return (
-    <div className="fixed inset-0 w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
+    <div className="cover-screen fixed inset-0 w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
       <img
         src={bgIntro}
         alt="Background"
-        className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none z-0 bg-black"
+        className="cover-background absolute inset-0 w-full h-full object-contain object-center pointer-events-none z-0 bg-black"
       />
 
       <div className="absolute inset-0 bg-white/10" />
@@ -73,12 +73,11 @@ export default function IntroduceScreen({ onNext, onBack }) {
           </p>
 
           <h1
-            className="text-center mb-8 text-[#7C2B3A]"
+            className="text-center mb-8 text-[#7C2B3A] title-name1"
             style={{
               fontFamily: 'Lavishly Yours',
               fontWeight: 400,
               fontStyle: 'normal',
-              fontSize: '75px',
               lineHeight: '100%',
               letterSpacing: '0%',
             }}

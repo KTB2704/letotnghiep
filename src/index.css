@@ -622,6 +622,45 @@ body,
   background: #7C2B3A;
 }
 
+@media (max-width: 700px) {
+  .invitation-paper {
+    height: max(100svh, 760px);
+    aspect-ratio: auto;
+  }
+
+  .invitation-nav {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    white-space: nowrap;
+  }
+
+  .invitation-tab {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 0;
+    font-size: 8px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .ceremony-tab {
+    padding: 3% 5% 0;
+  }
+
+  .ceremony-title {
+    margin-top: 1.5rem !important;
+    font-size: clamp(28px, 6.5vw, 38px);
+  }
+
+  .ceremony-details {
+    margin-top: 30px;
+  }
+}
+
 @media (max-width: 560px) {
   .invitation-stage {
     padding: 0 12px;
@@ -629,6 +668,8 @@ body,
 
   .invitation-paper {
     width: min(794px, calc(100vw - 24px));
+    height: max(100svh, 760px);
+    aspect-ratio: auto;
   }
 
   .invitation-inner {
@@ -637,10 +678,26 @@ body,
   }
 
   .invitation-nav {
-    margin-top: 22px;
-    padding-inline: 2px;
-    font-size: 7px;
-    letter-spacing: 0.08em;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    margin-top: 16px;
+    margin-bottom: 0;
+    padding: 8px 0 6px;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .invitation-tab {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 0;
+    font-size: inherit;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .home-tab h2 {
@@ -678,7 +735,7 @@ body,
 
   .ceremony-title {
     margin-top: 1.5rem !important;
-    font-size: clamp(26px, 8vw, 40px);
+    font-size: clamp(22px, 6.5vw, 32px);
   }
 
   .ceremony-subtitle {
@@ -722,6 +779,11 @@ body,
     margin-bottom: 18px !important;
   }
 
+  .timeline-tab {
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+
   .timeline-track {
     margin-left: 8px;
     padding-left: 18px;
@@ -737,12 +799,19 @@ body,
     line-height: 1.25;
   }
 
+  .timeline-node {
+    left: -24px;
+  }
+
   .rsvp-tab {
+    justify-content: flex-start;
+    padding-top: 12%;
     padding-inline: 4%;
   }
 
   .rsvp-title {
-    font-size: clamp(25px, 8vw, 34px);
+    font-size: clamp(23px, 7vw, 30px);
+    line-height: 1.08;
   }
 
   .rsvp-subtitle {
@@ -786,6 +855,60 @@ body,
     font-size: 13px;
   }
 }
+
+
+.title-name {
+  font-size: 60px;
+}
+
+.title-name1 {
+  font-size: 74px;
+}
+
+
+@media (max-width: 550px) {
+  .rsvp-tab {
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .rsvp-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .rsvp-choice {
+    min-width: 0;
+    padding-inline: 5px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .title-name {
+    font-size: 55px;
+  }
+
+  .cover-background1 {
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 475px) {
+  .cover-background {
+    object-fit: cover;
+  }
+
+  .title-name {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 435px) {
+  .title-name1 {
+    font-size: 62px;
+  }
+}
+
 
 /* Animation cho mail opening - Enhanced */
 @keyframes mailSlideOpen {

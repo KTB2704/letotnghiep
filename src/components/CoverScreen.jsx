@@ -34,13 +34,13 @@ export default function CoverScreen({ onNext }) {
     }
   }, [mailState, onNext]);
   return (
-    <div className="fixed inset-0 w-screen h-screen overflow-hidden select-none">
+    <div className="cover-screen fixed inset-0 w-screen h-screen overflow-hidden select-none">
 
       {/* 1. ẢNH NỀN PHỦ TOÀN BỘ MÀN HÌNH */}
       <img
         src={bgSplash}
         alt="Background"
-        className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none z-0 bg-black"
+        className="cover-background absolute inset-0 w-full h-full object-contain object-center pointer-events-none z-0 bg-black"
       />
 
       {/* Lớp phủ nhẹ tăng tương phản */}

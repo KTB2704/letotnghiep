@@ -13,7 +13,7 @@ const events = [
 
 export default function TimelineTab() {
   return (
-    <div className="flex-1 flex flex-col space-y-4 py-2 animate-fadeIn">
+    <div className="timeline-tab flex-1 flex flex-col space-y-4 py-2 animate-fadeIn">
       <div className="ceremony-heading timeline-heading mb-8">
         <h3 className="ceremony-title mt-14">THỜI GIAN BUỔI LỄ</h3>
         <p className="ceremony-subtitle timeline-subtitle">ORDER OF EVENTS</p>

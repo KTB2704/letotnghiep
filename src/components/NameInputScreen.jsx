@@ -45,13 +45,13 @@ export default function NameInputScreen({ onConfirm, onBack }) {
   };
 
   return (
-    <div className="fixed inset-0 w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
+    <div className="cover-screen fixed inset-0 w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
 
       {/* Background Image */}
       <img
         src={bgInputName}
         alt="Background"
-        className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none z-0 bg-black"
+        className="cover-background1 absolute inset-0 w-full h-full object-contain object-center pointer-events-none z-0 bg-black"
       />
 
       {/* Content Container */}
@@ -59,12 +59,11 @@ export default function NameInputScreen({ onConfirm, onBack }) {
         <div className="flex-1 flex flex-col items-center justify-center">
           {/* YOUR NAME Title - Dynamic */}
           <h1
-            className="mb-12"
+            className="mb-12 title-name"
             style={{
               fontFamily: 'Playfair Display',
               fontWeight: 400,
               fontStyle: 'normal',
-              fontSize: '60px',
               lineHeight: '100%',
               letterSpacing: '0%',
               color: '#7C2B3A',
