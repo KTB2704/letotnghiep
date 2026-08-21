@@ -908,6 +908,10 @@ body,
     font-size: 55px;
   }
 
+  .thank-you-title {
+    font-size: 27px;
+  }
+
   .cover-background1 {
     object-fit: cover;
   }
