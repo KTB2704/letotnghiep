@@ -20,7 +20,7 @@ export default function WishesTab({ guestName, onGoToRsvp }) {
       ]);
     }
     setWishInput('');
-    onGoToRsvp();
+    onGoToRsvp(wishInput.trim());
   };
 
   return (

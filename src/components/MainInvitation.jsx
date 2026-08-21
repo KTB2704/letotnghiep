@@ -20,9 +20,30 @@ const TABS = [
   { id: 'XÁC NHẬN', label: 'XÁC NHẬN' },
 ];
 
-export default function MainInvitation({ guestName, onBackToCover }) {
+const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwg7kXc4URr46f1OChmAIRoLy2jwFXdoNLWmfwzHXjH8KWtVVPr2LSEWIXU4HlSLTHdEQ/exec';
+
+export default function MainInvitation({ guestName, guestEmail, onBackToCover }) {
   const [activeTab, setActiveTab] = useState('TRANG CHỦ');
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
+  const [rsvpResponse, setRsvpResponse] = useState('yes');
+  const [wish, setWish] = useState('');
+
+  const handleRsvpSubmit = async (response) => {
+    await fetch(GOOGLE_SHEETS_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({
+        email: guestEmail,
+        name: guestName,
+        wish,
+        attending: response,
+      }),
+    });
+
+    setRsvpResponse(response);
+    setRsvpSubmitted(true);
+  };
 
   const renderActiveTab = () => {
     switch (activeTab) {
@@ -36,14 +57,23 @@ export default function MainInvitation({ guestName, onBackToCover }) {
         return (
           <WishesTab
             guestName={guestName}
-            onGoToRsvp={() => setActiveTab('XÁC NHẬN')}
+            onGoToRsvp={(wishText) => {
+              setWish(wishText);
+              setActiveTab('XÁC NHẬN');
+            }}
           />
         );
       case 'XÁC NHẬN':
         return rsvpSubmitted ? (
-          <ThankYouTab onEdit={() => setRsvpSubmitted(false)} />
+          <ThankYouTab
+            response={rsvpResponse}
+            onEdit={() => setRsvpSubmitted(false)}
+          />
         ) : (
-          <RsvpTab guestName={guestName} onSubmit={() => setRsvpSubmitted(true)} />
+          <RsvpTab
+            guestName={guestName}
+            onSubmit={handleRsvpSubmit}
+          />
         );
       default:
         return <HomeTab guestName={guestName} />;

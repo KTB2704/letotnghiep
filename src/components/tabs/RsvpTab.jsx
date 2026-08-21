@@ -9,7 +9,7 @@ export default function RsvpTab({ guestName, onSubmit }) {
 
   const handleRsvpSubmit = (e) => {
     e.preventDefault();
-    onSubmit();
+    onSubmit(rsvpAttending);
   }
 
   return (

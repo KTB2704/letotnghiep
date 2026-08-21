@@ -16,9 +16,11 @@ import MainInvitation from './MainInvitation';
 export default function GraduationCard() {
   const [step, setStep] = useState('cover');
   const [guestName, setGuestName] = useState('');
+  const [guestEmail, setGuestEmail] = useState('');
 
-  const handleNameConfirm = ({ name }) => {
+  const handleNameConfirm = ({ name, email }) => {
     setGuestName(name);
+    setGuestEmail(email);
     setStep('introduce');
   };
 
@@ -54,6 +56,7 @@ export default function GraduationCard() {
       return (
         <MainInvitation
           guestName={guestName}
+          guestEmail={guestEmail}
           onBackToCover={() => setStep('cover')}
         />
       );

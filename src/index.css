@@ -623,7 +623,12 @@ body,
 }
 
 @media (max-width: 700px) {
+  .invitation-stage {
+    padding-inline: 0;
+  }
+
   .invitation-paper {
+    width: 100vw;
     height: max(100svh, 760px);
     aspect-ratio: auto;
   }
@@ -640,7 +645,7 @@ body,
     flex: 1 1 0;
     min-width: 0;
     padding-inline: 0;
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 0.02em;
     line-height: 1;
     text-align: center;
@@ -659,15 +664,22 @@ body,
   .ceremony-details {
     margin-top: 30px;
   }
+
+}
+
+@media (max-width: 630px) {
+  .invitation-name {
+    font-size: clamp(42px, 10vw, 62px);
+  }
 }
 
 @media (max-width: 560px) {
   .invitation-stage {
-    padding: 0 12px;
+    padding-inline: 0;
   }
 
   .invitation-paper {
-    width: min(794px, calc(100vw - 24px));
+    width: 100vw;
     height: max(100svh, 760px);
     aspect-ratio: auto;
   }
@@ -867,6 +879,14 @@ body,
 
 
 @media (max-width: 550px) {
+  .home-tab {
+    padding-top: 20%;
+  }
+
+  .invitation-name {
+    font-size: clamp(36px, 18vw, 74px);
+  }
+
   .rsvp-tab {
     justify-content: center;
     padding-top: 0;
